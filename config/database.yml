@@ -16,4 +16,9 @@ test:
 
 production:
   <<: *default
-  database: fs_challenge_prod
+  url: <%= ENV["DATABASE_URL"] %>
+  host: <%= ENV["PGHOST"] %>
+  database: <%= ENV["PGDATABASE"] %>
+  username: <%= ENV["PGUSER"] %>
+  password: <%= ENV["PGPASSWORD"] %>
+  port: <%= ENV["PGPORT"] %>
