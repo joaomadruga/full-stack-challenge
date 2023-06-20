@@ -14,8 +14,9 @@ end
 
 20.times do
   name = Faker::Book.unique.title
+  title = Faker::Book.unique.title
   author = Faker::Name.unique.name
-  Book.create(name: name, author: author)
+  Book.create(name: name, title: title, author: author)
 end
 
 Book.first(5).each do |book|
