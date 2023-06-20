@@ -24,6 +24,24 @@
               <%= form.select :book_id, Book.all.collect { |b| [b.name, b.id] }, {}, class: "max-w-lg block focus:ring-indigo-500 focus:border-indigo-500 w-full shadow-sm sm:max-w-xs sm:text-sm border-gray-300 rounded-md" %>
             </div>
           </div>
+          <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start">
+            <%= form.label :user_email, class: "block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2" %>
+            <div class="mt-1 sm:mt-0 sm:col-span-2">           
+              <%= form.select :user_email, User.all.collect { |u| [u.email] }, {}, class: "max-w-lg block focus:ring-indigo-500 focus:border-indigo-500 w-full shadow-sm sm:max-w-xs sm:text-sm border-gray-300 rounded-md" %>
+            </div>
+          </div>
+          <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start">
+            <%= form.label :borrowed_book_at, class: "block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2" %>
+            <div class="mt-1 sm:mt-0 sm:col-span-2">           
+              <%= form.date_field :borrowed_book_at, class: "max-w-lg block focus:ring-indigo-500 focus:border-indigo-500 w-full shadow-sm sm:max-w-xs sm:text-sm border-gray-300 rounded-md" %>
+            </div>
+          </div>
+          <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start">
+            <%= form.label :returned_book_at, class: "block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2" %>
+            <div class="mt-1 sm:mt-0 sm:col-span-2">           
+              <%= form.date_field :returned_book_at, class: "max-w-lg block focus:ring-indigo-500 focus:border-indigo-500 w-full shadow-sm sm:max-w-xs sm:text-sm border-gray-300 rounded-md" %>
+            </div>
+          </div>
         </div>
       </div>
     <div class="pt-5">

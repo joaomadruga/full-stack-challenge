@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   resources :books
   devise_for :users
 
+  scope "/admin" do
+    resources :users
+  end
+
   devise_scope :user do
     authenticated :user do
       root 'books#index', as: :authenticated_root
