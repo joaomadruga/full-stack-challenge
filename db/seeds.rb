@@ -7,12 +7,16 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create_or_find_by(email: 'dev@hent.com.br') do |u|
+  u.name = 'dev hent'
   u.password = '123456789'
   u.password_confirmation = '123456789'
 end
 
 20.times do
-  Book.create name: Faker::Book.title
+  name = Faker::Book.unique.title
+  title = Faker::Book.unique.title
+  author = Faker::Name.unique.name
+  Book.create(title: title, author: author)
 end
 
 Book.first(5).each do |book|
