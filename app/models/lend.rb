@@ -23,7 +23,7 @@ class Lend < ApplicationRecord
 
     Rails.logger.debug "The value of my_variable is: #{not_returned_lends.length}"
     email_counts = Lend.group(:user_email).count
-    if not_returned_lends.length > 2
+    if not_returned_lends.length >= 2
       errors.add(:user_email, ": there is more than two lends with #{user_email}")
     end
   end
